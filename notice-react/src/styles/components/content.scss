@@ -1,0 +1,14 @@
+.content {
+  border: 1px solid black;
+  border-top: none;
+  background-color: $greyLightColor;
+  padding: 15px 20px;
+
+  &__time {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
