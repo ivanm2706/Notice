@@ -1,4 +1,4 @@
-export const API_KEY = 'ddS0jgBZ1dU4kgmW1WWOmD';
+export const API_KEY = 'bjbSoda8nnvykAoSkcj8od';
 export const dbName = 'NotesDatabase';
 export const storeName = 'NotesStore';
 
@@ -96,25 +96,21 @@ export const getIDDataForm = async (KEY_APP: string) => {
 const fields = [{
   name: 'title',
   type_name: 'string',
-  default: 'Title note...',
 }, {
   name: 'text',
   type_name: 'string',
-  default: 'Body note...',
 }, {
   name: 'lock',
   type_name: 'boolean',
-  default: false,
 }, {
   name: 'date',
   type_name: 'date',
-  default: 'today',
 }];
 
 
-const createdTableFields = async (KEY_APP: string, KEY_FORM: string) => {
+const createdTableFields = async (KEY_APP: string, KEY_FORM: string): Promise<any[]> => {
   try {
-    const fieldsAPI: object[] = [];
+    const fieldsAPI: any[] = [];
 
     fields.forEach(async (fieldBody) => {
       const response = await fetch(`https://quintadb.com/apps/${KEY_APP}/entities/${KEY_FORM}/properties.json`, {
@@ -125,8 +121,7 @@ const createdTableFields = async (KEY_APP: string, KEY_FORM: string) => {
         body: JSON.stringify({ ...fieldBody, 'rest_api_key': API_KEY }),
       });
 
-      const data = await response.json();
-      console.log(data);
+      const data: { field: any[] } = await response.json();
 
       if (data.field) {
         fieldsAPI.push(data.field);
@@ -139,7 +134,7 @@ const createdTableFields = async (KEY_APP: string, KEY_FORM: string) => {
   }
 };
 
-export const getAllTableFields = async (KEY_APP: string, KEY_FORM: string) => {
+export const getAllTableFields = async (KEY_APP: string, KEY_FORM: string): Promise<any[]> => {
   try {
     const response = await fetch(`https://quintadb.com/apps/${KEY_APP}/entities/${KEY_FORM}/properties.json?rest_api_key=${API_KEY}`, {
         method: 'GET',
