@@ -1,7 +1,7 @@
 import { Note } from "../types/Note";
 import { API_KEY, getAllTableFields, getIDDataBase, getIDDataForm } from "./helper";
 
-export const fetchNotes: {
+export const fetchNotesQuentaDb: {
   KEY_APP: string,
   FORM_FIELD: any[],
   KEY_FORM: string,
@@ -63,16 +63,6 @@ export const fetchNotes: {
         });
   
         const records: any[] = await response.json().then(data => data.records);
-        console.log(records.map(record => {
-          console.log(record.id)
-          return {
-            title: record.values[this.KEY_TITLE],
-            date: record.values[this.KEY_DATE],
-            id: record.id,
-            text: record.values[this.KEY_TEXT],
-            lock: record.values[this.KEY_LOCK],
-          }
-        }))
 
         return records.map(record => {
           return {

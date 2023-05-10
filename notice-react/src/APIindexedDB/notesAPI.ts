@@ -1,7 +1,7 @@
 import { Note } from "../types/Note";
 import { openDatabase, storeName } from "./helperAPI";
 
-export const notesAPI = {
+export const fetchIndexedDb = {
   async getAll(): Promise<Note[]> {
     try {
       const db = await openDatabase();

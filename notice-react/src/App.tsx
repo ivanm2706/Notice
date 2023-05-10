@@ -1,6 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { notesAPI } from './API/notesAPI';
-import { fetchNotes } from './APIquintadb/fetch';
+import { fetchNotesSelect } from './API/fetchAPI';
 import { Content } from './components/Content/Content';
 import { Header } from './components/Header/Header';
 import { Modal } from './components/Modal';
@@ -18,8 +17,7 @@ function App() {
   const { setNotes, selectedNote, setSelectedNote } = useContext(AppContext);
 
   const foo = () => {
-    // notesAPI.getAll()
-    fetchNotes.getAll()
+    fetchNotesSelect.getAll()
       .then(setNotes);
   };
 
@@ -32,15 +30,10 @@ function App() {
       lock: false,
     };
 
-    fetchNotes.add(newNote)
+    fetchNotesSelect.add(newNote)
       .then(() => {
           foo();
         });
-
-    // notesAPI.add(newNote)
-    //   .then(() => {
-    //     foo();
-    //   });
   }, []);
 
   const deleteNote = useCallback(() => {
@@ -48,17 +41,11 @@ function App() {
       return;
     }
 
-    fetchNotes.delete(selectedNote.id)
+    fetchNotesSelect.delete(selectedNote.id)
       .then(() => {
         setSelectedNote(null);
         foo();
       });
-
-    // notesAPI.delete(selectedNote.id)
-    //   .then(() => {
-    //     setSelectedNote(null);
-    //     foo();
-    //   });
   }, [selectedNote]);
 
   const changeNote = useCallback((title: string, text: string, lock: boolean) => {
@@ -72,17 +59,11 @@ function App() {
       date: (new Date()).toString(),
     };
 
-    fetchNotes.change(selectedNote.id, newdata)
+    fetchNotesSelect.change(selectedNote.id, newdata)
       .then(() => {
           foo();
           setSelectedNote(null);
         })
-
-    // notesAPI.change(selectedNote.id, newdata)
-    //   .then(() => {
-    //     foo();
-    //     setSelectedNote(null);
-    //   })
   }, [selectedNote]);
 
   useEffect(() => {
