@@ -1,4 +1,4 @@
-export const API_KEY = 'bjbSoda8nnvykAoSkcj8od';
+export const API_KEY = 'bpW7zaW7rdROoNW6RdSSkI';
 export const dbName = 'NotesDatabase';
 export const storeName = 'NotesStore';
 
