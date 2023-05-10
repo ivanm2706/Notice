@@ -20,4 +20,8 @@
   &--notice {
     background-image: url(../../img/notice.svg);
   }
+
+  &[disabled] {
+    background-color: #aba1a1;
+  }
 }

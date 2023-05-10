@@ -1,7 +1,71 @@
 [{
-  "title": "notice example",
-  "id": 1,
-  "text": "Lorem.....",
-  "data": "05/05/30",
+  "title": "Important Update",
+  "id": 123,
+  "text": "Please note that we have updated our terms of service. Click here to review the changes.",
+  "data": "08/05/2023",
+  "lock": false
+},
+{
+  "title": "Meeting Reminder",
+  "id": 456,
+  "text": "Just a friendly reminder that we have a team meeting tomorrow at 10:00 AM. See you there!",
+  "data": "08/06/2023",
   "lock": true
-}]
+},
+{
+  "title": "New Product Launch",
+  "id": 789,
+  "text": "We're excited to announce the launch of our new product line! Check out our website for more details.",
+  "data": "08/07/2023",
+  "lock": false
+},
+{
+  "title": "Server Maintenance",
+  "id": 1011,
+  "text": "We will be performing server maintenance tonight from 10:00 PM to 2:00 AM. Expect some downtime during this period.",
+  "data": "08/08/2023",
+  "lock": true
+},
+{
+  "title": "Holiday Schedule",
+  "id": 1213,
+  "text": "Our office will be closed on Monday, September 5th in observance of Labor Day. We will resume normal business hours on Tuesday.",
+  "data": "09/05/2023",
+  "lock": false
+},
+{
+  "title": "Product Recall",
+  "id": 1415,
+  "text": "We are recalling a batch of our product due to a manufacturing defect. Please refer to our website for more information.",
+  "data": "09/10/2023",
+  "lock": true
+},
+{
+  "title": "Employee Appreciation Day",
+  "id": 1617,
+  "text": "We would like to extend our appreciation to all of our hardworking employees on this special day. Thank you for all that you do!",
+  "data": "09/15/2023",
+  "lock": false
+},
+{
+  "title": "System Upgrade",
+  "id": 1819,
+  "text": "We will be upgrading our systems on Wednesday, September 20th. Expect some service interruptions during this time.",
+  "data": "09/20/2023",
+  "lock": true
+},
+{
+  "title": "Charity Drive",
+  "id": 2021,
+  "text": "We're kicking off our annual charity drive! Help us make a difference in the lives of those in need by donating today.",
+  "data": "09/25/2023",
+  "lock": false
+},
+{
+  "title": "Product Discount",
+  "id": 2223,
+  "text": "Get 20% off on all products this weekend only! Don't miss out on this special offer.",
+  "data": "09/30/2023",
+  "lock": true
+}
+]

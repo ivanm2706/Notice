@@ -1,4 +1,4 @@
-.notice {
+.notes {
   background-color: $greyLightColor;
 
   &__list {
@@ -20,6 +20,7 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+    padding-bottom: 0;
     transition: background-color 300ms;
     
     &:hover {

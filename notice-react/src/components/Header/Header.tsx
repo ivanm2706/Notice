@@ -1,16 +1,56 @@
-export const Header = () => (
-  <header className="header">
-    <div className="container">
-      <div className="header__container">
-        <div className="header__buttons">
-        <button className="button button--add" />
-        <button className="button button--delete" disabled />
-        <button className="button button--notice" disabled></button>
+import { FC, useContext } from 'react';
+import { AppContext } from '../../Context/context';
+import { IsModal } from '../../types/IsModal';
+import { Search } from './Search';
 
-      </div>
+type Props = {
+  addNote: () => void,
+  openModal: React.Dispatch<React.SetStateAction<IsModal>>,
+}
 
-      <input placeholder="&#x1F50D; Search" type="text" className="header__search" />
+export const Header: FC<Props> = ({
+  addNote,
+  openModal,
+}) => {
+  const { selectedNote } = useContext(AppContext);
+
+  const hendlerAddNote = () => {
+    addNote();
+  };
+
+  const hendlerRemoveNote = () => {
+    openModal({ status: true, target: 'delete' });
+  };
+
+  const hendlerChangeNote = () => {
+    openModal({ status: true, target: 'change' });
+  };
+
+  return (
+    <header className="header">
+      <div className="container">
+        <div className="header__container">
+          <div className="header__buttons">
+          <button
+            className="button button--add"
+            onClick={hendlerAddNote}
+          />
+          <button
+            className="button button--delete"
+            onClick={hendlerRemoveNote}
+            disabled={!selectedNote}
+          />
+          <button
+            className="button button--notice"
+            onClick={hendlerChangeNote}
+            disabled={!selectedNote}
+          ></button>
+
+        </div>
+
+        <Search />
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
